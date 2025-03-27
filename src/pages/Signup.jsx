@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import styles from "../styles/Signup.module.css";
+import { NavLink } from "react-router";
 
 function Signup() {
   const [userCredentials, setUserCredentials] = useState({
@@ -39,42 +41,67 @@ function Signup() {
   };
 
   return (
-    <main>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Your Username</label>
-        <input
-          type="text"
-          placeholder="Enter your name"
-          name="username"
-          value={userCredentials.username}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <label htmlFor="password">Your Password</label>
+    <div className={styles.coverall}>
+      {/* <div className={styles.block1}>
+        <h1>Manage workforce</h1>
+      </div> */}
+      <div className={`${styles.containform} ${styles.block2}`}>
+        <div className={styles.formstyling}>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="username">Your Username</label>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              name="username"
+              value={userCredentials.username}
+              onChange={handleChange}
+              required
+              className={styles.input}
+            />
+            <br />
 
-        <input
-          type="password"
-          name="password"
-          id=""
-          value={userCredentials.password}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <label htmlFor="userRole">Your role</label>
-        <small>Leave blank if no role applies</small>
-        <select
-          name="userRole"
-          id=""
-          value={userCredentials.userRole}
-          onChange={handleChange}>
-          <option value="Admin">Admin</option>
-          <option value="Editor">Editor</option>
-        </select>
-        <button type="submit">Register</button>
-      </form>
-    </main>
+            <label htmlFor="password">Your Password</label>
+            <input
+              type="password"
+              name="password"
+              id=""
+              value={userCredentials.password}
+              onChange={handleChange}
+              required
+              placeholder="Your password"
+            />
+            <br />
+
+            <label htmlFor="userRole">
+              Your role{" "}
+              <span style={{ fontSize: "12px", color: "#FFFB46" }}>
+                *Leave blank if no role applies
+              </span>
+            </label>
+            <select
+              className={styles.dropdown}
+              name="userRole"
+              id=""
+              value={userCredentials.userRole}
+              onChange={handleChange}>
+              <option>----</option>
+              <option value="Admin">Admin</option>
+              <option value="Editor">Editor</option>
+            </select>
+            <button
+              type="submit"
+              className={styles.btn}>
+              Register
+            </button>
+            <NavLink
+              to="/login"
+              className={styles.login}>
+              Login
+            </NavLink>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
 
