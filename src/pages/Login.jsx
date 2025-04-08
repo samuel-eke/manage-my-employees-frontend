@@ -1,13 +1,14 @@
 import React, { useState, useContext } from "react";
 import styles from "../styles/Login.module.css";
 import axios from "axios";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { userLogin } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +27,8 @@ const Login = () => {
       userLogin(token); // Store auth token in context
       console.log(userLogin);
       alert("User successfully logged in");
+      sessionStorage.setItem("authToken", token);
+      navigate("/dashboard");
     } catch (error) {
       console.error(error.message);
     }

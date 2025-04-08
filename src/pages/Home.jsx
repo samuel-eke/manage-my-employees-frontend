@@ -4,15 +4,18 @@ import styles from "../styles/Homepage.module.css";
 
 function Home() {
   return (
-    <div>
-      <ul>
-        <li>
-          <NavLink to="/signup">Signup</NavLink>
-        </li>
-        <li>
-          <NavLink to="/login">Login</NavLink>
-        </li>
-      </ul>
+    <div className={styles.contain}>
+      <NavLink
+        to="/signup"
+        className={`${styles.signup} ${styles.btn}`}>
+        Signup
+      </NavLink>
+
+      <NavLink
+        to="/login"
+        className={`${styles.btn} ${styles.login}`}>
+        Login
+      </NavLink>
     </div>
   );
 }

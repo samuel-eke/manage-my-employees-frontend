@@ -1,36 +1,28 @@
-.homeContainer {
+.contain {
+  width: 40vw;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
 }
 
-.title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
+.contain a {
+  list-style-type: none;
+  font-size: 2rem;
+}
+.btn {
+  text-decoration: none;
+
+  border-radius: 13px;
+  padding: 12px;
+  margin: 8px;
+  text-align: center;
+  color: white;
 }
 
-.button {
-  padding: 15px 30px;
-  margin: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.signup {
+  background-color: green;
 }
 
-.button:hover {
-  background-color: #0056b3;
-}
-
-.button:active {
-  background-color: #003f7f;
+.login {
+  background-color: blue;
 }

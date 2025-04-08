@@ -4,6 +4,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import EmployeesView from "./pages/EmployeesView";
+import Dashboard from "./pages/Dashboard";
+import Protected from "./components/Protected";
 
 function App() {
   return (
@@ -24,8 +26,12 @@ function App() {
             element={<Signup />}
           />
           <Route
-            path="employees"
-            element={<EmployeesView />}
+            path="dashboard"
+            element={
+              <Protected>
+                <Dashboard />
+              </Protected>
+            }
           />
         </Routes>
       </BrowserRouter>

@@ -1,0 +1,36 @@
+.main {
+  width: 250px;
+  border: 2px gray solid;
+  border-radius: 5px;
+  margin: 8px;
+  padding: 12px;
+}
+
+.namesection {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 8px;
+}
+
+.btnarea {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.btnarea button {
+  width: 80px;
+  padding: 8px;
+  text-align: center;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.edit {
+  background-color: darkcyan;
+}
+
+.del {
+  background-color: red;
+}
